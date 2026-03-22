@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+}
+#back {
+  width: 100%;
+  height: 100vh;
+}
+
+#back img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#top {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#workingarea {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 100vh;
+  max-width: 1920px;
+}
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 0;
+}
+#nav img {
+  height: 160px;
+}
+
+#nleft,
+#nright {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+#nav a {
+  pointer-events: all;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  color: whitesmoke;
+  font-family: "" Lucida Sans Regular ", " Lucida Grande ", " Lucida Sans eneva,
+    Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+#nav a:hover {
+  color: gainsboro;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+#hero {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#heroleft {
+  min-width: 50%;
+}
+#heroleft .elem {
+  height: 6.9vw;
+  overflow: hidden;
+}
+
+#heroleft button {
+  padding: 0.8vw 0.4vw;
+  font-size: 2.5vw;
+  margin-top: 2vw;
+  font-family: Blackletter;
+  color: gray;
+  background-color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#heroleft button:hover {
+  background-color: gainsboro;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#heroleft .elem h1 {
+  line-height: 0.9;
+  font-family: Blackletter;
+  color: gainsboro;
+  font-weight: 100;
+  font-size: 7vw;
+}
+
+#heroright {
+  display: flex;
+  width: 19%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#heroright p {
+  text-align: right;
+  font-size: 15px;
+  font-family: Blackletter;
+  color: whitesmoke;
+  font-weight: 400;
+}
+
+#heroright #imagediv {
+  width: 100%;
+  height: 170px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://i1.sndcdn.com/artworks-GFRnRxUCHkUrlbzK-2po9IA-t500x500.jpg);
+}
+
+#heroright p:nth-child(3) {
+  margin-bottom: 50px;
+}
+
+#top {
+  position: absolute;
+  z-index: 10;
+}
+#back {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modal Styles */
+#contentModal {
+  font-family: "Blackletter", serif;
+  transition: opacity 0.3s ease;
+}
+
+#contentModal > div {
+  transition: transform 0.3s ease;
+}
+
+#modalContent h2 {
+  font-size: 1.5em;
+  color: gainsboro;
+  margin: 20px 0 10px 0;
+  font-weight: 600;
+}
+
+#modalContent p {
+  margin: 15px 0;
+  color: #e0e0e0;
+}
+
+#modalContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#modalContent li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d0d0d0;
+}
+
+#modalContent li:last-child {
+  border-bottom: none;
+}
+
+/* Merch Styles */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.merch-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.merch-item h3 {
+  color: gainsboro;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.merch-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: gainsboro;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.merch-link:hover {
+  background: whitesmoke;
+  transform: translateY(-2px);
+}
+
+/* Tab Styles */
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.tab-item {
+  display: block;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.tab-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* Platform Styles */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.platform-item {
+  display: block;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.platform-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* Tour Styles */
+.tour-dates {
+  margin: 20px 0;
+}
+
+.tour-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tour-item h3 {
+  color: gainsboro;
+  margin-bottom: 8px;
+}
+
+.tour-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: gainsboro;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.tour-link:hover {
+  background: whitesmoke;
+  transform: translateY(-2px);
+}
+
+/* Close Button Hover */
+#closeModal:hover {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.2) !important;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Scrollbar Styling */
+#contentModal div::-webkit-scrollbar {
+  width: 8px;
+}
+
+#contentModal div::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#contentModal div::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}

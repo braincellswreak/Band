@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> 𝔓𝔒𝔏𝔜𝔓ℌℑ𝔄  </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="style.css" /> 
+    <audio id="background-audio" src="Polyphia - Chimera (feat. Lil West) (Official Music Video) [JT4xW7zIAbQ].mp3" autoplay loop hidden title="Polyphia - Chimera"></audio>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        const btn = document.createElement('button');
+        btn.id = "mute-btn";
+        btn.title = "Mute/Unmute";
+        btn.innerHTML = `<svg id="sound-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v2.17l3 3v-.14z"/><path id="mute-slash" style="display: none;" d="M16.5 12c0 1.77-1.02 3.29-2.5 4.03v2.17l3-3v.14z"/></svg>`;
+        document.body.appendChild(btn);
+        const audio = document.getElementById('background-audio');
+        let muted = false;
+
+        function updateIcon() {
+          const soundIcon = btn.querySelector("#sound-icon");
+          if (audio.muted || audio.volume === 0) {
+            soundIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm9.41-1.59L20 17.17 18.59 18.59 12 12l-6.59 6.59L4 17.17l7-7z" />'; // muted + X
+          } else {
+            soundIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v2.17l3 3v-.14z"/>'; // normal
+          }
+        }
+
+        btn.addEventListener('click', function () {
+          audio.muted = !audio.muted;
+          updateIcon();
+        });
+
+        updateIcon();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="back">
+        <img src="ChatGPT Image Oct 23, 2025, 09_54_35 PM.png" alt="Polyphia Band Live" />
+
+        <img src="timmmmm .jpg" alt="Tim Henson" />
+
+        <img src="scott lepage.jpg" alt="Scott LePage" />
+
+        <img src="clay poli.jpg" alt="Clay Poli" />
+
+        <img src="Clay-Gober.webp" alt="Clay Gober" />
+
+        </div> 
+
+      </div>
+      <div id="top">
+        <div id="workingarea">
+          <div id="nav">
+            <div id="nleft">
+              <img src="logo_polu-removebg-preview.png" alt="#" />
+              <a href="#">MERCH</a><a href="#">tabs</a>
+            </div>
+            <div id="nright"><a href="#">listen</a><a href="#">tour</a></div>
+          </div>
+          <div id="hero">
+            <div id="heroleft">
+              <div class="elem">
+                <h1>REMEMBER</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+              </div>
+            <div class="elem">
+                <h1>That You will </h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+              </div>
+              <div class="elem">
+                <h1>DIE.</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+                <h1>remember</h1>
+              </div>
+              <button>Explore Now</button>
+            </div>
+            <div id="heroright">
+              <p>“We’re just trying to make guitar music cool again.”</p>
+              <div id="imagediv"></div>
+              <p>
+                “We take inspiration from anything … If you were to take away
+                the guitars on the past few records and just listen to the drums
+                and bass, they’re just playing beats, whether they’re trap beats
+                or future bass beats. … The guitar is the only guitar-y thing
+                about Polyphia: the rest is just humans playing programmed
+                parts.” — Tim Henson
+              </p>
+              <p>
+                “The goal for us has always been to write the style of music
+                that we enjoy listening to. … Our taste is always changing so
+                our style is always changing too. The only way we can top it is
+                if we evolve into something newer and fresher.” — Scott LePage
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Modal Window for Backend -->
+    <div id="contentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; backdrop-filter: blur(10px); cursor: pointer;">
+      <div style="position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; max-width: 600px; max-height: 80vh; overflow-y: auto; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); cursor: default;">
+        <button id="closeModal" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: whitesmoke; font-size: 30px; cursor: pointer; width: 40px; height: 40px; line-height: 1; transition: all 0.3s;">&times;</button>
+        <h1 id="modalTitle" style="font-family: 'Blackletter'; font-size: 2.5em; color: gainsboro; margin-bottom: 30px; text-transform: uppercase;"></h1>
+        <div id="modalContent" style="color: whitesmoke; line-height: 1.8;">
+          <!-- Content will be dynamically inserted -->
+        </div>
+      </div>
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    
+<script  type="text/javascript"  src="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.js"></script>
+      
+<script src="script.js"></script>
+  </body>
+</html>
